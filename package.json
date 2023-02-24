@@ -16,7 +16,7 @@
   "author": "belomaxorka",
   "license": "MIT",
   "homepage": "https://github.com/belomaxorka/phosen",
-  "main": "dist/phosen.css",
+  "main": "dist/phosen.min.css",
   "scripts": {
     "build": "npm-run-all lint-code clean-dist build-prod build-css",
     "build-css": "gulp build-css",

@@ -20,22 +20,18 @@ const banner = require('postcss-banner');
 const sourcemaps = require('gulp-sourcemaps');
 const flexbugs = require('postcss-flexbugs-fixes');
 
-// Plugins list
-const plugins = [
-  fontMagician(),
-  flexbugs(),
-  autoprefixer({
-    overrideBrowserslist: ['last 2 versions'],
-    cascade: false
-  }),
-  banner({banner: bannerText, important: true})
-];
-
 // Tasks
 gulp.task('build-prod', function () { // Production release
-  plugins.push(
+  const plugins = [
+    fontMagician(),
+    flexbugs(),
+    autoprefixer({
+      overrideBrowserslist: ['last 2 versions'],
+      cascade: false
+    }),
+    banner({banner: bannerText, important: true}),
     cssnano({preset: 'default'})
-  );
+  ];
 
   return gulp.src(sourceFile)
     .pipe(concat(path.basename(sourceFile)))
@@ -48,6 +44,16 @@ gulp.task('build-prod', function () { // Production release
 });
 
 gulp.task('build-css', function () { // Development release
+  const plugins = [
+    fontMagician(),
+    flexbugs(),
+    autoprefixer({
+      overrideBrowserslist: ['last 2 versions'],
+      cascade: false
+    }),
+    banner({banner: bannerText, important: true})
+  ];
+
   return gulp.src(sourceFile)
     .pipe(concat(path.basename(sourceFile)))
     .pipe(sourcemaps.init())
@@ -57,6 +63,6 @@ gulp.task('build-css', function () { // Development release
     .pipe(filesize());
 });
 
-gulp.task('watch', function () { // Auto-compile
-  gulp.watch(path.dirname(sourceFile), gulp.series('build-css'))
+gulp.task('watch', function () { // Automatically compile
+  gulp.watch(path.dirname(sourceFile), gulp.series('build-prod', 'build-css'))
 });
