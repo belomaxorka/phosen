@@ -1,0 +1,9 @@
+/*!
+ * phosen - Lightweight and beautiful CSS framework
+ * 
+ * Author: belomaxorka
+ * Version: 1.0.0
+ * Homepage: https://github.com/belomaxorka/phosen
+ * License: MIT
+ */.example{background:-webkit-gradient(linear,left top,left bottom,from(#fff),to(#000));background:linear-gradient(180deg,#fff,#000);display:grid;-webkit-transition:all .5s;transition:all .5s;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+/*# sourceMappingURL=phosen.css.map */

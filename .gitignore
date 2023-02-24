@@ -1,0 +1,13 @@
+### IDE ###
+.idea
+.vscode
+
+### NodeJS ###
+node_modules
+package-lock.json
+
+### Logging ###
+*.log
+
+### Misc ###
+yarn.lock

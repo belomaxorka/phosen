@@ -1,0 +1,42 @@
+{
+  "name": "phosen",
+  "description": "Lightweight and beautiful CSS framework",
+  "keywords": [
+    "css",
+    "sass",
+    "framework",
+    "css-framework",
+    "css3",
+    "responsive-design"
+  ],
+  "version": "0.0.1",
+  "author": "belomaxorka",
+  "license": "MIT",
+  "homepage": "https://github.com/belomaxorka/phosen",
+  "main": "dist/phosen.min.css",
+  "scripts": {
+    "build": "rimraf dist/ && npm-run-all build-prod && npm-run-all build-css",
+    "build-css": "gulp build-css",
+    "build-prod": "gulp build-prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/belomaxorka/phosen.git"
+  },
+  "bugs": {
+    "url": "https://github.com/belomaxorka/phosen/issues"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "cssnano": "^5.1.15",
+    "gulp": "^4.0.2",
+    "gulp-filesize": "^0.0.6",
+    "gulp-postcss": "^9.0.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.21",
+    "postcss-banner": "^4.0.1",
+    "rimraf": "^4.1.2"
+  }
+}
