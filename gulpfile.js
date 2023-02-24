@@ -18,16 +18,20 @@ const banner = require('postcss-banner');
 const sourcemaps = require('gulp-sourcemaps');
 const cssnano = require('cssnano');
 
+// Plugins list
+const plugins = [
+  autoprefixer({
+    overrideBrowserslist: ['last 2 versions'],
+    cascade: false
+  }),
+  banner({banner: bannerText, important: true})
+];
+
 // Tasks
 gulp.task('build-prod', function () { // Production release
-  const plugins = [
-    autoprefixer({
-      overrideBrowserslist: ['last 2 versions'],
-      cascade: false
-    }),
-    banner({banner: bannerText, important: true}),
+  plugins.push(
     cssnano({preset: 'default'})
-  ];
+  );
 
   return gulp.src(sourceFile)
     .pipe(concat(path.basename(sourceFile)))
@@ -40,14 +44,6 @@ gulp.task('build-prod', function () { // Production release
 });
 
 gulp.task('build-css', function () { // Development release
-  const plugins = [
-    autoprefixer({
-      overrideBrowserslist: ['last 2 versions'],
-      cascade: false
-    }),
-    banner({banner: bannerText, important: true})
-  ];
-
   return gulp.src(sourceFile)
     .pipe(concat(path.basename(sourceFile)))
     .pipe(sourcemaps.init())
