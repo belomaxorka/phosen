@@ -56,3 +56,7 @@ gulp.task('build-css', function () { // Development release
     .pipe(gulp.dest(outputDir))
     .pipe(filesize());
 });
+
+gulp.task('watch', function () { // Auto-compile
+  gulp.watch(sourceFile, gulp.series('build-css'))
+});

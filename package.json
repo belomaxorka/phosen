@@ -16,11 +16,12 @@
   "author": "belomaxorka",
   "license": "MIT",
   "homepage": "https://github.com/belomaxorka/phosen",
-  "main": "dist/phosen.min.css",
+  "main": "dist/phosen.css",
   "scripts": {
-    "build": "npx stylelint src/*.css && rimraf dist/ && npm-run-all build-prod && npm-run-all build-css",
+    "build": "npm-run-all lint-code clean-dist build-prod build-css",
     "build-css": "gulp build-css",
     "build-prod": "gulp build-prod",
+    "watch": "npm-run-all clean-dist && gulp watch",
     "clean-dist": "rimraf dist/",
     "lint-code": "npx stylelint src/*.css"
   },
