@@ -1,5 +1,5 @@
-<p align="center"><img src="https://github.com/belomaxorka/belomaxorka/blob/main/phosen/phosen.png?raw=true"></p>
-<p align="center">Lightweight and beautiful CSS framework</p>
+<p align="center"><a href="https://github.com/belomaxorka/phosen"><img src="https://github.com/belomaxorka/belomaxorka/blob/main/phosen/phosen.png?raw=true"></a></p>
+<p align="center"><i>Lightweight and beautiful CSS framework</i></p>
 
 ## License
 This repository is licensed under the [MIT License](LICENSE).
