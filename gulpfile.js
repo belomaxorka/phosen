@@ -1,12 +1,14 @@
 // Base
-const sourceFile = './src/*.css';
+const sourceFile = './src/phosen.css';
 const outputDir = './dist';
 
 const packageJson = require('./package.json');
 const bannerText = packageJson.name + ' - ' + packageJson.description + '\n\n' + 'Author: ' + packageJson.author + '\n' + 'Version: ' + packageJson.version + '\n' + 'Homepage: ' + packageJson.homepage + '\n' + 'License: ' + packageJson.license;
 
+const path = require("path");
 const gulp = require('gulp');
 const postcss = require('gulp-postcss');
+const concat = require('gulp-concat-css');
 const rename = require('gulp-rename');
 const filesize = require('gulp-filesize');
 
@@ -28,6 +30,7 @@ gulp.task('build-prod', function () { // Production release
   ];
 
   return gulp.src(sourceFile)
+    .pipe(concat(path.basename(sourceFile)))
     .pipe(sourcemaps.init())
     .pipe(postcss(plugins))
     .pipe(sourcemaps.write('.'))
@@ -46,6 +49,7 @@ gulp.task('build-css', function () { // Development release
   ];
 
   return gulp.src(sourceFile)
+    .pipe(concat(path.basename(sourceFile)))
     .pipe(sourcemaps.init())
     .pipe(postcss(plugins))
     .pipe(sourcemaps.write('.'))
