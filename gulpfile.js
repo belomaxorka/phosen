@@ -58,5 +58,5 @@ gulp.task('build-css', function () { // Development release
 });
 
 gulp.task('watch', function () { // Auto-compile
-  gulp.watch(sourceFile, gulp.series('build-css'))
+  gulp.watch(path.dirname(sourceFile), gulp.series('build-css'))
 });
