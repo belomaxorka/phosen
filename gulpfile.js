@@ -15,13 +15,15 @@ const filesize = require('gulp-filesize');
 // Addons
 const autoprefixer = require('autoprefixer');
 const fontMagician = require('postcss-font-magician');
+const cssnano = require('cssnano');
 const banner = require('postcss-banner');
 const sourcemaps = require('gulp-sourcemaps');
-const cssnano = require('cssnano');
+const flexbugs = require('postcss-flexbugs-fixes');
 
 // Plugins list
 const plugins = [
   fontMagician(),
+  flexbugs(),
   autoprefixer({
     overrideBrowserslist: ['last 2 versions'],
     cascade: false
