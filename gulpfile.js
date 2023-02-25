@@ -29,10 +29,7 @@ gulp.task('build-prod', function () { // Production release
   const plugins = [
     postcssSystemUiFont(),
     flexbugs(),
-    autoprefixer({
-      overrideBrowserslist: ['last 2 versions'],
-      cascade: false
-    }),
+    autoprefixer(),
     banner({banner: bannerText, important: true}),
     cssnano({preset: 'default'})
   ];
@@ -53,10 +50,7 @@ gulp.task('build-css', function () { // Development release
   const plugins = [
     postcssSystemUiFont(),
     flexbugs(),
-    autoprefixer({
-      overrideBrowserslist: ['last 2 versions'],
-      cascade: false
-    }),
+    autoprefixer(),
     banner({banner: bannerText, important: true})
   ];
 
