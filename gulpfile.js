@@ -1,11 +1,13 @@
 // Base
 const sourceFile = './src/phosen.css';
 const outputDir = './dist';
+const docsDir = './docs/*.html';
 
 const packageJson = require('./package.json');
 const bannerText = packageJson.name + ' - ' + packageJson.description + '\n\n' + 'Author: ' + packageJson.author + '\n' + 'Version: ' + packageJson.version + '\n' + 'Homepage: ' + packageJson.homepage + '\n' + 'License: ' + packageJson.license;
 
 const path = require("path");
+
 const gulp = require('gulp');
 const postcss = require('gulp-postcss');
 const concat = require('gulp-concat-css');
@@ -19,6 +21,7 @@ const cssnano = require('cssnano');
 const banner = require('postcss-banner');
 const sourcemaps = require('gulp-sourcemaps');
 const flexbugs = require('postcss-flexbugs-fixes');
+const browserSync = require('browser-sync').create();
 
 // Tasks
 gulp.task('build-prod', function () { // Production release
@@ -40,7 +43,8 @@ gulp.task('build-prod', function () { // Production release
     .pipe(sourcemaps.write('.'))
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest(outputDir))
-    .pipe(filesize());
+    .pipe(filesize())
+    .pipe(browserSync.stream());
 });
 
 gulp.task('build-css', function () { // Development release
@@ -60,9 +64,15 @@ gulp.task('build-css', function () { // Development release
     .pipe(postcss(plugins))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(outputDir))
-    .pipe(filesize());
+    .pipe(filesize())
+    .pipe(browserSync.stream());
 });
 
-gulp.task('watch', function () { // Automatically compile
-  gulp.watch(path.dirname(sourceFile), gulp.series('build-prod', 'build-css'))
+gulp.task('watch', function () { // Automatically compile + BrowserSync
+  browserSync.init({
+    server: path.dirname(docsDir)
+  });
+
+  gulp.watch(path.dirname(sourceFile), gulp.series('build-prod', 'build-css'));
+  gulp.watch(docsDir).on('change', browserSync.reload);
 });

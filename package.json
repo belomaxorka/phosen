@@ -22,7 +22,7 @@
     "build": "npm-run-all lint-code clean-dist build-prod build-css",
     "build-css": "gulp build-css",
     "build-prod": "gulp build-prod",
-    "watch": "npm-run-all clean-dist && gulp watch",
+    "watch": "npm-run-all build && gulp watch",
     "clean-dist": "rimraf dist/",
     "lint-code": "npx stylelint src/*.css"
   },
@@ -35,6 +35,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
+    "browser-sync": "^2.27.12",
     "cssnano": "^5.1.15",
     "gulp": "^4.0.2",
     "gulp-concat-css": "^3.1.0",
