@@ -10,7 +10,8 @@
     "responsive",
     "mobile",
     "mobile-first",
-    "front-end"
+    "front-end",
+    "web"
   ],
   "version": "0.0.1",
   "author": "belomaxorka",
@@ -49,5 +50,9 @@
     "rimraf": "^4.1.2",
     "stylelint": "^15.2.0",
     "stylelint-config-standard": "^30.0.1"
-  }
+  },
+  "files": [
+    "dist/*.{css, map}",
+    "src/*.{css}"
+  ]
 }
