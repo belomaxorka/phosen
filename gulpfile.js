@@ -17,6 +17,7 @@ const filesize = require('gulp-filesize');
 
 // Addons
 const autoprefixer = require('autoprefixer');
+const postcssSystemUiFont = require('postcss-font-family-system-ui');
 const cssnano = require('cssnano');
 const banner = require('postcss-banner');
 const sourcemaps = require('gulp-sourcemaps');
@@ -26,6 +27,7 @@ const browserSync = require('browser-sync').create();
 // Tasks
 gulp.task('build-prod', function () { // Production release
   const plugins = [
+    postcssSystemUiFont(),
     flexbugs(),
     autoprefixer({
       overrideBrowserslist: ['last 2 versions'],
@@ -49,6 +51,7 @@ gulp.task('build-prod', function () { // Production release
 
 gulp.task('build-css', function () { // Development release
   const plugins = [
+    postcssSystemUiFont(),
     flexbugs(),
     autoprefixer({
       overrideBrowserslist: ['last 2 versions'],

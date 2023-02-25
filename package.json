@@ -48,6 +48,7 @@
     "postcss": "^8.4.21",
     "postcss-banner": "^4.0.1",
     "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-font-family-system-ui": "^5.0.0",
     "rimraf": "^4.1.2",
     "stylelint": "^15.2.0",
     "stylelint-config-standard": "^30.0.1"
