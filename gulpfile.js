@@ -12,6 +12,7 @@ const gulp = require('gulp');
 const postcss = require('gulp-postcss');
 const concat = require('gulp-concat-css');
 const rename = require('gulp-rename');
+const copy = require('gulp-copy');
 const filesize = require('gulp-filesize');
 
 // Addons
@@ -44,6 +45,7 @@ gulp.task('build-prod', function () { // Production release
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest(outputDir))
     .pipe(filesize())
+    .pipe(copy(path.dirname(docsDir)))
     .pipe(browserSync.stream());
 });
 
