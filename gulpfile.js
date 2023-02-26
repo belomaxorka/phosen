@@ -65,6 +65,8 @@ gulp.task('build-css', function () { // Development release
 });
 
 gulp.task('watch', function () { // Automatically compile + BrowserSync
+  console.log("[" + packageJson.name + "]" + " Watching source directory, press Ctrl+C to exit");
+
   browserSync.init({
     server: path.dirname(docsDir)
   });
