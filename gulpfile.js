@@ -1,4 +1,3 @@
-// Base
 const sourceFile = './src/phosen.css';
 const outputDir = './dist';
 const docsDir = './docs/*.html';
@@ -15,7 +14,6 @@ const rename = require('gulp-rename');
 const copy = require('gulp-copy');
 const filesize = require('gulp-filesize');
 
-// Addons
 const autoprefixer = require('autoprefixer');
 const postcssSystemUiFont = require('postcss-font-family-system-ui');
 const cssnano = require('cssnano');
@@ -24,7 +22,6 @@ const sourcemaps = require('gulp-sourcemaps');
 const flexbugs = require('postcss-flexbugs-fixes');
 const browserSync = require('browser-sync').create();
 
-// Tasks
 gulp.task('build-prod', function () { // Production release
   const plugins = [
     postcssSystemUiFont(),
