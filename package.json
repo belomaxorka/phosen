@@ -59,7 +59,9 @@
   },
   "files": [
     "dist/*.{css, map}",
-    "src/*.{css}"
+    "src/*.{css}",
+    "LICENSE",
+    "README.md"
   ],
   "browserslist": [
     "last 2 versions"
