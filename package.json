@@ -15,7 +15,12 @@
     "micro",
     "phosen",
     "phosen-css",
-    "style"
+    "style",
+    "kickstarter",
+    "html",
+    "html5",
+    "postcss",
+    "flexbox"
   ],
   "version": "0.0.1",
   "author": "belomaxorka",
