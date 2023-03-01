@@ -1,16 +1,5 @@
-/*!
- * phosen - Lightweight and beautiful CSS framework
- * 
- * Author: belomaxorka
- * Version: 0.0.1
- * Homepage: https://github.com/belomaxorka/phosen
- * License: MIT
- */
 .no-select {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 
 .clearfix {
@@ -62,4 +51,3 @@
 .text-capitalize {
   text-transform: capitalize;
 }
-/*# sourceMappingURL=phosen.css.map */
