@@ -8,6 +8,30 @@
   clear: both;
 }
 
+.make-fixed {
+  position: fixed;
+  width: 100%;
+}
+
+.make-full-width {
+  width: 100% !important;
+}
+
+.make-full-screen {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.make-vertical-align {
+  display: flex;
+  align-items: center;
+}
+
+.make-horizontal-align {
+  display: flex;
+  justify-content: center;
+}
+
 .padding-less {
   padding: 0 !important;
 }
@@ -37,7 +61,7 @@
 }
 
 .make-squared {
-  border-radius: 0;
+  border-radius: 0 !important;
 }
 
 .text-uppercase {
@@ -50,4 +74,12 @@
 
 .text-capitalize {
   text-transform: capitalize;
+}
+
+.pull-right {
+  float: right !important;
+}
+
+.pull-left {
+  float: left !important;
 }
